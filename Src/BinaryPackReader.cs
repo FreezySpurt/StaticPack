@@ -573,6 +573,36 @@ namespace FFS.Libraries.StaticPack {
             }
         }
 
+        [MethodImpl(AggressiveInlining)]
+        public void ReadArrayUnmanaged<T>(ref T[] result, int idx) where T : unmanaged {
+            if (ReadNullFlag()) {
+                result = null;
+            } else {
+                var count = ReadInt();
+                var byteSize = ReadUint();
+                if (result == null || count + idx > result.Length) {
+                    result = new T[count + idx];
+                }
+
+                if (count > 0) {
+                    unsafe {
+                        #if DEBUG || FFS_PACK_ENABLE_DEBUG
+                        var actualSize = (uint) (count * sizeof(T));
+                        if (byteSize != actualSize) throw new Exception($"[ReadArrayUnmanaged<{typeof(T)}>] The number of bytes has changed - stored {byteSize}, actual {actualSize}");
+                        #endif
+
+                        fixed (byte* bytePtr = &Buffer[Position]) {
+                            fixed (void* dataPtr = &result[idx]) {
+                                System.Buffer.MemoryCopy(bytePtr, dataPtr, byteSize, byteSize);
+                            }
+                        }
+
+                        Position += byteSize;
+                    }
+                }
+            }
+        }
+
         #if !FFS_PACK_DISABLE_MULTI_ARRAYS && !UNITY_WEBGL
         [MethodImpl(AggressiveInlining)]
         public T[,] ReadArray2DUnmanaged<T>() where T : unmanaged {
@@ -687,6 +717,21 @@ namespace FFS.Libraries.StaticPack {
 
             for (var i = 0; i < count; i++) {
                 result[i] = BinaryPack<T>.Read(ref this);
+            }
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadArray<T>(ref T[] result, int idx) {
+            if (ReadNullFlag()) return;
+
+            var count = ReadInt();
+            Position += sizeof(uint); // byteSize
+            if (result == null || count + idx > result.Length) {
+                result = new T[count + idx];
+            }
+
+            for (var i = 0; i < count; i++) {
+                result[i + idx] = BinaryPack<T>.Read(ref this);
             }
         }
 

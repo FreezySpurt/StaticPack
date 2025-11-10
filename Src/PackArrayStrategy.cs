@@ -13,6 +13,7 @@ namespace FFS.Libraries.StaticPack {
     public interface IPackArrayStrategy<T> : IPackArrayStrategy {
         public T[] ReadArray(ref BinaryPackReader reader);
         public void ReadArray(ref BinaryPackReader reader, ref T[] result);
+        public void ReadArray(ref BinaryPackReader reader, ref T[] result, int idx);
         #if !FFS_PACK_DISABLE_MULTI_ARRAYS && !UNITY_WEBGL
         public T[,] ReadArray2D(ref BinaryPackReader reader);
         public T[,,] ReadArray3D(ref BinaryPackReader reader);
@@ -44,6 +45,9 @@ namespace FFS.Libraries.StaticPack {
 
         [MethodImpl(AggressiveInlining)]
         public void ReadArray(ref BinaryPackReader reader, ref T[] result) => reader.ReadArrayUnmanaged(ref result);
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadArray(ref BinaryPackReader reader, ref T[] result, int idx) => reader.ReadArrayUnmanaged(ref result, idx);
 
         [MethodImpl(AggressiveInlining)]
         public void WriteArray(ref BinaryPackWriter writer, T[] value) => writer.WriteArrayUnmanaged(value);
@@ -93,6 +97,9 @@ namespace FFS.Libraries.StaticPack {
         public void ReadArray(ref BinaryPackReader reader, ref T[] result) => reader.ReadArray(ref result);
 
         [MethodImpl(AggressiveInlining)]
+        public void ReadArray(ref BinaryPackReader reader, ref T[] result, int idx) => reader.ReadArray(ref result, idx);
+
+        [MethodImpl(AggressiveInlining)]
         public void WriteArray(ref BinaryPackWriter writer, T[] value) => writer.WriteArray(value);
 
         [MethodImpl(AggressiveInlining)]
@@ -138,6 +145,9 @@ namespace FFS.Libraries.StaticPack {
 
         [MethodImpl(AggressiveInlining)]
         public void ReadArray(ref BinaryPackReader reader, ref T[] result) => reader.ReadArray(ref result);
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadArray(ref BinaryPackReader reader, ref T[] result, int idx) => reader.ReadArray(ref result, idx);
 
         [MethodImpl(AggressiveInlining)]
         public void WriteArray(ref BinaryPackWriter writer, T[] value) => writer.WriteArray(value);
