@@ -394,6 +394,195 @@ namespace FFS.Libraries.StaticPack {
             value = default;
             return false;
         }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadByte(out byte v0, out byte v1) {
+            v0 = ReadByte();
+            v1 = ReadByte();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadByte(out byte v0, out byte v1, out byte v2) {
+            v0 = ReadByte();
+            v1 = ReadByte();
+            v2 = ReadByte();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadByte(out byte v0, out byte v1, out byte v2, out byte v3) {
+            v0 = ReadByte();
+            v1 = ReadByte();
+            v2 = ReadByte();
+            v3 = ReadByte();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadShort(out short v0, out short v1) {
+            v0 = ReadShort();
+            v1 = ReadShort();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadShort(out short v0, out short v1, out short v2) {
+            v0 = ReadShort();
+            v1 = ReadShort();
+            v2 = ReadShort();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadShort(out short v0, out short v1, out short v2, out short v3) {
+            v0 = ReadShort();
+            v1 = ReadShort();
+            v2 = ReadShort();
+            v3 = ReadShort();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUshort(out ushort v0, out ushort v1) {
+            v0 = ReadUshort();
+            v1 = ReadUshort();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUshort(out ushort v0, out ushort v1, out ushort v2) {
+            v0 = ReadUshort();
+            v1 = ReadUshort();
+            v2 = ReadUshort();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUshort(out ushort v0, out ushort v1, out ushort v2, out ushort v3) {
+            v0 = ReadUshort();
+            v1 = ReadUshort();
+            v2 = ReadUshort();
+            v3 = ReadUshort();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadInt(out int v0, out int v1) {
+            v0 = ReadInt();
+            v1 = ReadInt();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadInt(out int v0, out int v1, out int v2) {
+            v0 = ReadInt();
+            v1 = ReadInt();
+            v2 = ReadInt();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadInt(out int v0, out int v1, out int v2, out int v3) {
+            v0 = ReadInt();
+            v1 = ReadInt();
+            v2 = ReadInt();
+            v3 = ReadInt();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUint(out uint v0, out uint v1) {
+            v0 = ReadUint();
+            v1 = ReadUint();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUint(out uint v0, out uint v1, out uint v2) {
+            v0 = ReadUint();
+            v1 = ReadUint();
+            v2 = ReadUint();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUint(out uint v0, out uint v1, out uint v2, out uint v3) {
+            v0 = ReadUint();
+            v1 = ReadUint();
+            v2 = ReadUint();
+            v3 = ReadUint();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadFloat(out float v0, out float v1) {
+            v0 = ReadFloat();
+            v1 = ReadFloat();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadFloat(out float v0, out float v1, out float v2) {
+            v0 = ReadFloat();
+            v1 = ReadFloat();
+            v2 = ReadFloat();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadFloat(out float v0, out float v1, out float v2, out float v3) {
+            v0 = ReadFloat();
+            v1 = ReadFloat();
+            v2 = ReadFloat();
+            v3 = ReadFloat();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadLong(out long v0, out long v1) {
+            v0 = ReadLong();
+            v1 = ReadLong();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadLong(out long v0, out long v1, out long v2) {
+            v0 = ReadLong();
+            v1 = ReadLong();
+            v2 = ReadLong();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadLong(out long v0, out long v1, out long v2, out long v3) {
+            v0 = ReadLong();
+            v1 = ReadLong();
+            v2 = ReadLong();
+            v3 = ReadLong();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUlong(out ulong v0, out ulong v1) {
+            v0 = ReadUlong();
+            v1 = ReadUlong();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUlong(out ulong v0, out ulong v1, out ulong v2) {
+            v0 = ReadUlong();
+            v1 = ReadUlong();
+            v2 = ReadUlong();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUlong(out ulong v0, out ulong v1, out ulong v2, out ulong v3) {
+            v0 = ReadUlong();
+            v1 = ReadUlong();
+            v2 = ReadUlong();
+            v3 = ReadUlong();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadDouble(out double v0, out double v1) {
+            v0 = ReadDouble();
+            v1 = ReadDouble();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadDouble(out double v0, out double v1, out double v2) {
+            v0 = ReadDouble();
+            v1 = ReadDouble();
+            v2 = ReadDouble();
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadDouble(out double v0, out double v1, out double v2, out double v3) {
+            v0 = ReadDouble();
+            v1 = ReadDouble();
+            v2 = ReadDouble();
+            v3 = ReadDouble();
+        }
         #endregion
 
         #region BASE_VALUE_TYPES
@@ -762,6 +951,7 @@ namespace FFS.Libraries.StaticPack {
             var dim0 = ReadInt();
             var dim1 = ReadInt();
             var dim2 = ReadInt();
+            Position += sizeof(uint);
 
             var res = new T[dim0, dim1, dim2];
             for (var i0 = 0; i0 < dim0; i0++) {
@@ -1087,6 +1277,89 @@ namespace FFS.Libraries.StaticPack {
         [MethodImpl(AggressiveInlining)]
         public void SkipDictionary() {
             SkipArray();
+        }
+        #endregion
+
+        #region SPAN
+        [MethodImpl(AggressiveInlining)]
+        public void ReadBytes(Span<byte> destination) {
+            #if DEBUG || FFS_PACK_ENABLE_DEBUG
+            if (!HasNext((uint) destination.Length)) throw new Exception("ByteReader, Out of bound");
+            #endif
+            Buffer.AsSpan((int) Position, destination.Length).CopyTo(destination);
+            Position += (uint) destination.Length;
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public ReadOnlySpan<byte> ReadBytesAsSpan(uint count) {
+            #if DEBUG || FFS_PACK_ENABLE_DEBUG
+            if (!HasNext(count)) throw new Exception("ByteReader, Out of bound");
+            #endif
+            var span = new ReadOnlySpan<byte>(Buffer, (int) Position, (int) count);
+            Position += count;
+            return span;
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public ReadOnlyMemory<byte> ReadBytesAsMemory(uint count) {
+            #if DEBUG || FFS_PACK_ENABLE_DEBUG
+            if (!HasNext(count)) throw new Exception("ByteReader, Out of bound");
+            #endif
+            var memory = new ReadOnlyMemory<byte>(Buffer, (int) Position, (int) count);
+            Position += count;
+            return memory;
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public ReadOnlySpan<byte> RemainingAsSpan() {
+            return new ReadOnlySpan<byte>(Buffer, (int) Position, (int) (Size - Position));
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public ReadOnlyMemory<byte> RemainingAsMemory() {
+            return new ReadOnlyMemory<byte>(Buffer, (int) Position, (int) (Size - Position));
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void ReadUnmanaged<T>(Span<T> destination) where T : unmanaged {
+            if (destination.Length == 0) return;
+            unsafe {
+                var size = (uint) (destination.Length * sizeof(T));
+                #if DEBUG || FFS_PACK_ENABLE_DEBUG
+                if (!HasNext(size)) throw new Exception("ByteReader, Out of bound");
+                #endif
+                fixed (byte* src = &Buffer[Position])
+                fixed (T* dest = destination) {
+                    System.Buffer.MemoryCopy(src, dest, size, size);
+                }
+                Position += size;
+            }
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public int ReadSpanUnmanaged<T>(Span<T> destination) where T : unmanaged {
+            if (ReadNullFlag()) return 0;
+
+            var count = ReadInt();
+            var byteSize = ReadUint();
+            if (count > 0) {
+                unsafe {
+                    #if DEBUG || FFS_PACK_ENABLE_DEBUG
+                    var actualSize = (uint) (count * sizeof(T));
+                    if (byteSize != actualSize) throw new Exception($"[ReadSpanUnmanaged<{typeof(T)}>] The number of bytes has changed - stored {byteSize}, actual {actualSize}");
+                    if (count > destination.Length) throw new Exception($"[ReadSpanUnmanaged<{typeof(T)}>] Destination too small - need {count}, have {destination.Length}");
+                    #endif
+
+                    fixed (byte* src = &Buffer[Position])
+                    fixed (T* dest = destination) {
+                        System.Buffer.MemoryCopy(src, dest, byteSize, byteSize);
+                    }
+
+                    Position += byteSize;
+                }
+            }
+
+            return count;
         }
         #endregion
     }

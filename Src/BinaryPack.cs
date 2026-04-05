@@ -28,7 +28,7 @@ namespace FFS.Libraries.StaticPack {
             RegisterWithCollections(static (ref BinaryPackWriter writer, in float value) => writer.WriteFloat(value),static (ref BinaryPackReader reader) => reader.ReadFloat(), new UnmanagedPackArrayStrategy<float>());
             RegisterWithCollections(static (ref BinaryPackWriter writer, in double value) => writer.WriteDouble(value),static (ref BinaryPackReader reader) => reader.ReadDouble(), new UnmanagedPackArrayStrategy<double>());
             RegisterWithCollections(static (ref BinaryPackWriter writer, in bool value) => writer.WriteBool(value),static (ref BinaryPackReader reader) => reader.ReadBool(), new UnmanagedPackArrayStrategy<bool>());
-            RegisterWithCollections(static (ref BinaryPackWriter writer, in DateTime value) => writer.WriteDateTime(value),static (ref BinaryPackReader reader) => reader.ReadDateTime(), new UnmanagedPackArrayStrategy<DateTime>());
+            RegisterWithCollections(static (ref BinaryPackWriter writer, in DateTime value) => writer.WriteDateTime(value),static (ref BinaryPackReader reader) => reader.ReadDateTime(), new StructPackArrayStrategy<DateTime>());
             RegisterWithCollections(static (ref BinaryPackWriter writer, in Guid value) => writer.WriteGuid(in value),static (ref BinaryPackReader reader) => reader.ReadGuid(), new UnmanagedPackArrayStrategy<Guid>());
 
             RegisterWithCollections(static (ref BinaryPackWriter writer, in string value) => writer.WriteString16(value), static (ref BinaryPackReader reader) => reader.ReadString16(), new ClassPackArrayStrategy<string>());
@@ -73,7 +73,7 @@ namespace FFS.Libraries.StaticPack {
         public static T ReadFromBytes<T>(this byte[] bytes, uint size, uint position, bool gzip = false, uint byteSizeHint = 4096) {
             if (gzip) {
                 var writer = BinaryPackWriter.CreateFromPool(byteSizeHint);
-                writer.WriteGzipData(bytes);
+                writer.WriteGzipData(bytes, (int) position, (int) size);
                 var reader = writer.AsReader();
                 var val =  BinaryPack<T>.Read(ref reader);
                 writer.Dispose();

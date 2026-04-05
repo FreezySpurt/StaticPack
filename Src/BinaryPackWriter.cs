@@ -392,13 +392,288 @@ namespace FFS.Libraries.StaticPack {
             Buffer[offset + 6] = union.Byte6;
             Buffer[offset + 7] = union.Byte7;
         }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteByte(byte v0, byte v1) {
+            EnsureSize(2);
+            var pos = Position;
+            Position += 2;
+            WriteByteAt(pos, v0);
+            WriteByteAt(pos + 1, v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteByte(byte v0, byte v1, byte v2) {
+            EnsureSize(3);
+            var pos = Position;
+            Position += 3;
+            WriteByteAt(pos, v0);
+            WriteByteAt(pos + 1, v1);
+            WriteByteAt(pos + 2, v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteByte(byte v0, byte v1, byte v2, byte v3) {
+            EnsureSize(4);
+            var pos = Position;
+            Position += 4;
+            WriteByteAt(pos, v0);
+            WriteByteAt(pos + 1, v1);
+            WriteByteAt(pos + 2, v2);
+            WriteByteAt(pos + 3, v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteShort(short v0, short v1) {
+            EnsureSize(sizeof(short) * 2);
+            var pos = Position;
+            Position += sizeof(short) * 2;
+            WriteShortAt(pos, v0);
+            WriteShortAt(pos + 2, v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteShort(short v0, short v1, short v2) {
+            EnsureSize(sizeof(short) * 3);
+            var pos = Position;
+            Position += sizeof(short) * 3;
+            WriteShortAt(pos, v0);
+            WriteShortAt(pos + 2, v1);
+            WriteShortAt(pos + 4, v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteShort(short v0, short v1, short v2, short v3) {
+            EnsureSize(sizeof(short) * 4);
+            var pos = Position;
+            Position += sizeof(short) * 4;
+            WriteShortAt(pos, v0);
+            WriteShortAt(pos + 2, v1);
+            WriteShortAt(pos + 4, v2);
+            WriteShortAt(pos + 6, v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUshort(ushort v0, ushort v1) {
+            EnsureSize(sizeof(ushort) * 2);
+            var pos = Position;
+            Position += sizeof(ushort) * 2;
+            WriteUshortAt(pos, v0);
+            WriteUshortAt(pos + 2, v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUshort(ushort v0, ushort v1, ushort v2) {
+            EnsureSize(sizeof(ushort) * 3);
+            var pos = Position;
+            Position += sizeof(ushort) * 3;
+            WriteUshortAt(pos, v0);
+            WriteUshortAt(pos + 2, v1);
+            WriteUshortAt(pos + 4, v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUshort(ushort v0, ushort v1, ushort v2, ushort v3) {
+            EnsureSize(sizeof(ushort) * 4);
+            var pos = Position;
+            Position += sizeof(ushort) * 4;
+            WriteUshortAt(pos, v0);
+            WriteUshortAt(pos + 2, v1);
+            WriteUshortAt(pos + 4, v2);
+            WriteUshortAt(pos + 6, v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteInt(int v0, int v1) {
+            EnsureSize(sizeof(int) * 2);
+            var pos = Position;
+            Position += sizeof(int) * 2;
+            WriteUintAt(pos, (uint) v0);
+            WriteUintAt(pos + 4, (uint) v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteInt(int v0, int v1, int v2) {
+            EnsureSize(sizeof(int) * 3);
+            var pos = Position;
+            Position += sizeof(int) * 3;
+            WriteUintAt(pos, (uint) v0);
+            WriteUintAt(pos + 4, (uint) v1);
+            WriteUintAt(pos + 8, (uint) v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteInt(int v0, int v1, int v2, int v3) {
+            EnsureSize(sizeof(int) * 4);
+            var pos = Position;
+            Position += sizeof(int) * 4;
+            WriteUintAt(pos, (uint) v0);
+            WriteUintAt(pos + 4, (uint) v1);
+            WriteUintAt(pos + 8, (uint) v2);
+            WriteUintAt(pos + 12, (uint) v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUint(uint v0, uint v1) {
+            EnsureSize(sizeof(uint) * 2);
+            var pos = Position;
+            Position += sizeof(uint) * 2;
+            WriteUintAt(pos, v0);
+            WriteUintAt(pos + 4, v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUint(uint v0, uint v1, uint v2) {
+            EnsureSize(sizeof(uint) * 3);
+            var pos = Position;
+            Position += sizeof(uint) * 3;
+            WriteUintAt(pos, v0);
+            WriteUintAt(pos + 4, v1);
+            WriteUintAt(pos + 8, v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUint(uint v0, uint v1, uint v2, uint v3) {
+            EnsureSize(sizeof(uint) * 4);
+            var pos = Position;
+            Position += sizeof(uint) * 4;
+            WriteUintAt(pos, v0);
+            WriteUintAt(pos + 4, v1);
+            WriteUintAt(pos + 8, v2);
+            WriteUintAt(pos + 12, v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteFloat(float v0, float v1) {
+            EnsureSize(sizeof(float) * 2);
+            var pos = Position;
+            Position += sizeof(float) * 2;
+            WriteFloatAt(pos, v0);
+            WriteFloatAt(pos + 4, v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteFloat(float v0, float v1, float v2) {
+            EnsureSize(sizeof(float) * 3);
+            var pos = Position;
+            Position += sizeof(float) * 3;
+            WriteFloatAt(pos, v0);
+            WriteFloatAt(pos + 4, v1);
+            WriteFloatAt(pos + 8, v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteFloat(float v0, float v1, float v2, float v3) {
+            EnsureSize(sizeof(float) * 4);
+            var pos = Position;
+            Position += sizeof(float) * 4;
+            WriteFloatAt(pos, v0);
+            WriteFloatAt(pos + 4, v1);
+            WriteFloatAt(pos + 8, v2);
+            WriteFloatAt(pos + 12, v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteLong(long v0, long v1) {
+            EnsureSize(sizeof(long) * 2);
+            var pos = Position;
+            Position += sizeof(long) * 2;
+            WriteUlongAt(pos, (ulong) v0);
+            WriteUlongAt(pos + 8, (ulong) v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteLong(long v0, long v1, long v2) {
+            EnsureSize(sizeof(long) * 3);
+            var pos = Position;
+            Position += sizeof(long) * 3;
+            WriteUlongAt(pos, (ulong) v0);
+            WriteUlongAt(pos + 8, (ulong) v1);
+            WriteUlongAt(pos + 16, (ulong) v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteLong(long v0, long v1, long v2, long v3) {
+            EnsureSize(sizeof(long) * 4);
+            var pos = Position;
+            Position += sizeof(long) * 4;
+            WriteUlongAt(pos, (ulong) v0);
+            WriteUlongAt(pos + 8, (ulong) v1);
+            WriteUlongAt(pos + 16, (ulong) v2);
+            WriteUlongAt(pos + 24, (ulong) v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUlong(ulong v0, ulong v1) {
+            EnsureSize(sizeof(ulong) * 2);
+            var pos = Position;
+            Position += sizeof(ulong) * 2;
+            WriteUlongAt(pos, v0);
+            WriteUlongAt(pos + 8, v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUlong(ulong v0, ulong v1, ulong v2) {
+            EnsureSize(sizeof(ulong) * 3);
+            var pos = Position;
+            Position += sizeof(ulong) * 3;
+            WriteUlongAt(pos, v0);
+            WriteUlongAt(pos + 8, v1);
+            WriteUlongAt(pos + 16, v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUlong(ulong v0, ulong v1, ulong v2, ulong v3) {
+            EnsureSize(sizeof(ulong) * 4);
+            var pos = Position;
+            Position += sizeof(ulong) * 4;
+            WriteUlongAt(pos, v0);
+            WriteUlongAt(pos + 8, v1);
+            WriteUlongAt(pos + 16, v2);
+            WriteUlongAt(pos + 24, v3);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteDouble(double v0, double v1) {
+            EnsureSize(sizeof(double) * 2);
+            var pos = Position;
+            Position += sizeof(double) * 2;
+            WriteDoubleAt(pos, v0);
+            WriteDoubleAt(pos + 8, v1);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteDouble(double v0, double v1, double v2) {
+            EnsureSize(sizeof(double) * 3);
+            var pos = Position;
+            Position += sizeof(double) * 3;
+            WriteDoubleAt(pos, v0);
+            WriteDoubleAt(pos + 8, v1);
+            WriteDoubleAt(pos + 16, v2);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteDouble(double v0, double v1, double v2, double v3) {
+            EnsureSize(sizeof(double) * 4);
+            var pos = Position;
+            Position += sizeof(double) * 4;
+            WriteDoubleAt(pos, v0);
+            WriteDoubleAt(pos + 8, v1);
+            WriteDoubleAt(pos + 16, v2);
+            WriteDoubleAt(pos + 24, v3);
+        }
         #endregion
 
         #region BASE_VALUE_TYPES
         [MethodImpl(AggressiveInlining)]
         public void WriteNullable<T>(in T? value) where T : struct {
-            if (WriteNotNullFlag(value)) {
-                BinaryPack<T>.Write(ref this, value!.Value);
+            if (value.HasValue) {
+                EnsureSize(sizeof(byte));
+                Buffer[Position++] = 1;
+                BinaryPack<T>.Write(ref this, value.Value);
+            } else {
+                EnsureSize(sizeof(byte));
+                Buffer[Position++] = 0;
             }
         }
 
@@ -439,7 +714,7 @@ namespace FFS.Libraries.StaticPack {
         [MethodImpl(AggressiveInlining)]
         public void WriteString32(string value) {
             if (WriteNotNullFlag(value)) {
-                EnsureSize((uint) Encoding.UTF8.GetMaxByteCount(value.Length));
+                EnsureSize((uint) Encoding.UTF8.GetMaxByteCount(value.Length) + sizeof(int));
                 var bytesWritten = Encoding.UTF8.GetBytes(value, 0, value.Length, Buffer, (int) Position + sizeof(int));
                 WriteInt(bytesWritten);
                 Position += (uint) bytesWritten;
@@ -450,11 +725,11 @@ namespace FFS.Libraries.StaticPack {
         public void WriteString16(string value) {
             if (WriteNotNullFlag(value)) {
                 var len = Math.Min(value.Length, ushort.MaxValue);
-                EnsureSize((uint) Encoding.UTF8.GetMaxByteCount(len));
+                EnsureSize((uint) Encoding.UTF8.GetMaxByteCount(len) + sizeof(ushort));
                 var bytesWritten = Encoding.UTF8.GetBytes(value, 0, len, Buffer, (int) Position + sizeof(ushort));
-                var bytesLen = (ushort) Math.Min(bytesWritten, ushort.MaxValue);
-                WriteUshort(bytesLen);
-                Position += bytesLen;
+                if (bytesWritten > ushort.MaxValue) throw new Exception($"String UTF-8 byte length {bytesWritten} exceeds String16 limit {ushort.MaxValue}");
+                WriteUshort((ushort) bytesWritten);
+                Position += (uint) bytesWritten;
             }
         }
 
@@ -462,11 +737,11 @@ namespace FFS.Libraries.StaticPack {
         public void WriteString8(string value) {
             if (WriteNotNullFlag(value)) {
                 var len = Math.Min(value.Length, byte.MaxValue);
-                EnsureSize((uint) Encoding.UTF8.GetMaxByteCount(len));
+                EnsureSize((uint) Encoding.UTF8.GetMaxByteCount(len) + sizeof(byte));
                 var bytesWritten = Encoding.UTF8.GetBytes(value, 0, len, Buffer, (int) Position + sizeof(byte));
-                var bytesLen = (byte) Math.Min(bytesWritten, byte.MaxValue);
-                WriteByte(bytesLen);
-                Position += bytesLen;
+                if (bytesWritten > byte.MaxValue) throw new Exception($"String UTF-8 byte length {bytesWritten} exceeds String8 limit {byte.MaxValue}");
+                WriteByte((byte) bytesWritten);
+                Position += (uint) bytesWritten;
             }
         }
         #endregion
@@ -474,6 +749,7 @@ namespace FFS.Libraries.StaticPack {
         #region COLLECTIONS
         [MethodImpl(AggressiveInlining)]
         public void WriteArrayUnmanaged<T>(T[] value) where T : unmanaged {
+            if (value == null) { WriteNotNullFlag(value); return; }
             WriteArrayUnmanaged(value, 0, value.Length);
         }
 
@@ -561,6 +837,7 @@ namespace FFS.Libraries.StaticPack {
         
         [MethodImpl(AggressiveInlining)]
         public void WriteArray<T>(T[] value) {
+            if (value == null) { WriteNotNullFlag(value); return; }
             WriteArray(value, 0, value.Length);
         }
 
@@ -711,6 +988,78 @@ namespace FFS.Libraries.StaticPack {
                 }
                 WriteUintAt(position, Position - (position + sizeof(uint)));
             }
+        }
+        #endregion
+
+        #region SPAN
+        [MethodImpl(AggressiveInlining)]
+        public void WriteBytes(ReadOnlySpan<byte> value) {
+            var count = (uint) value.Length;
+            EnsureSize(count);
+            value.CopyTo(Buffer.AsSpan((int) Position, (int) count));
+            Position += count;
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteBytes(ReadOnlyMemory<byte> value) {
+            WriteBytes(value.Span);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteBytes(in ReadOnlySequence<byte> value) {
+            var length = (uint) value.Length;
+            EnsureSize(length);
+            value.CopyTo(Buffer.AsSpan((int) Position, (int) length));
+            Position += length;
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUnmanaged<T>(ReadOnlySpan<T> value) where T : unmanaged {
+            if (value.Length == 0) return;
+            unsafe {
+                var size = (uint) (value.Length * sizeof(T));
+                EnsureSize(size);
+                fixed (byte* dest = &Buffer[Position])
+                fixed (T* src = value) {
+                    System.Buffer.MemoryCopy(src, dest, size, size);
+                }
+                Position += size;
+            }
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteUnmanaged<T>(ReadOnlyMemory<T> value) where T : unmanaged {
+            WriteUnmanaged(value.Span);
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteSpanUnmanaged<T>(ReadOnlySpan<T> value) where T : unmanaged {
+            WriteNotNullFlag();
+            WriteInt(value.Length);
+            var position = MakePoint(sizeof(uint));
+            if (value.Length > 0) {
+                unsafe {
+                    var size = (uint) (value.Length * sizeof(T));
+                    EnsureSize(size);
+                    fixed (byte* dest = &Buffer[Position])
+                    fixed (T* src = value) {
+                        System.Buffer.MemoryCopy(src, dest, size, size);
+                    }
+                    Position += size;
+                }
+            }
+            WriteUintAt(position, Position - (position + sizeof(uint)));
+        }
+
+        [MethodImpl(AggressiveInlining)]
+        public void WriteSpan<T>(ReadOnlySpan<T> value) {
+            WriteNotNullFlag();
+            WriteInt(value.Length);
+            var position = MakePoint(sizeof(uint));
+            for (var i = 0; i < value.Length; i++) {
+                BinaryPack<T>.Write(ref this, value[i]);
+            }
+            WriteUintAt(position, Position - (position + sizeof(uint)));
         }
         #endregion
 
