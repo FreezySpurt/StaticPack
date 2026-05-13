@@ -38,6 +38,9 @@ namespace FFS.Libraries.StaticPack {
         }
 
         [MethodImpl(AggressiveInlining)]
+        public static int SizeOf<T>() => Unsafe.SizeOf<T>();
+
+        [MethodImpl(AggressiveInlining)]
         public static void RegisterWithCollections<T, S>(BinaryWriter<T> writer, BinaryReader<T> reader, S strategy = default) where S : IPackArrayStrategy<T> {
             BinaryPack<T>.Register(writer, reader);
             strategy.Register();
